@@ -9,15 +9,18 @@ namespace PlanningMyHeist
         public int AlarmScore { get; set; }
         public int VaultScore { get; set; }
         public int SecurityGuardScore { get; set; }
-        public bool IsSecure(int score)
+        public bool IsSecure
         {
-            if (score <= 0)
+            get
             {
-                return false;
-            }
-            else
-            {
-                return true;
+                if (AlarmScore <= 0 || VaultScore <= 0 || SecurityGuardScore <= 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         }
     }
